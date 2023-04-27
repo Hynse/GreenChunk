@@ -7,6 +7,6 @@ public class getSlotFromCoordinateUtil {
         int[] zTable = {0, 1, 0, -1};
         int newX = dx * xTable[dir] + dz * zTable[dir];
         int newZ = -dx * zTable[dir] + dz * xTable[dir];
-        return (newZ + 4) * 9 + (newX + 4);
+        return (newZ + 3) * 9 + (newX + 4);
     }
 }
