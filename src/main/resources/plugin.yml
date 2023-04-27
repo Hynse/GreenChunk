@@ -2,3 +2,9 @@ name: GreenChunk
 version: '${version}'
 main: xyz.hynse.greenchunk.GreenChunk
 api-version: 1.19
+folia-supported: true
+commands:
+  slime:
+    description: Check Slime at Current Position
+    usage: /slime
+    permission: slime.check
