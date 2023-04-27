@@ -18,5 +18,6 @@ commands:
     description: Reload the GreenChunk config
     usage: /greenchunkreload
     permission: greenchunk.reload
+    default: false
     aliases:
       - slimereload

@@ -15,6 +15,12 @@ reload-command:
     reload-config: '&eGreenChunk config reloaded.'
     no-permission: '&cYou do not have permission to use this command!'
     error-reload-config: '&cSomething went wrong reloading GreenChunk config, see the console for more.'
+# Configuration for the Gui Map
+gui:
+  messages:
+    title: 'Slime Maps'
+    no-permission: '&cYou do not have permission to use this command!'
+    not-player: '&cYou must be a player to use this command!'
 ### ---------------------------------------------------------------
 
 
