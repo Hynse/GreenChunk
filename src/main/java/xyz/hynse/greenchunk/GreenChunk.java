@@ -20,6 +20,8 @@ public class GreenChunk extends JavaPlugin {
     public static String slimemapMessagesTitle;
     public static String slimemapMessagesNoPermission;
     public static String slimemapMessagesNotPlayer;
+    public static String slimemapMessagesNotSlimechunk;
+    public static String slimemapMessagesIsSlimechunk;
     private MorePaperLib morePaperLib;
 
     @Override
@@ -44,6 +46,8 @@ public class GreenChunk extends JavaPlugin {
         slimemapMessagesTitle = getConfig().getString("gui.messages.title");
         slimemapMessagesNoPermission = getConfig().getString("gui.messages.no-permission");
         slimemapMessagesNotPlayer = getConfig().getString("gui.messages.not-player");
+        slimemapMessagesNotSlimechunk = getConfig().getString("gui.messages.not-slimechunk");
+        slimemapMessagesIsSlimechunk = getConfig().getString("gui.messages.is-slimechunk");
     }
     private void register() {
         getCommand("greenchunkreload").setExecutor(new ReloadCommand());

@@ -41,7 +41,7 @@ public class GuiBuilderUtil {
                 itemMeta.setDisplayName(ChatColor.RESET + String.format("(%d, %d)", x << 4, z << 4));
 
                 List<String> lore = new ArrayList<>();
-                lore.add(isSlimeChunk ? ChatColor.GREEN + "Slime chunk" : ChatColor.RED + "Not slime chunk");
+                lore.add(isSlimeChunk ? ChatColor.GREEN + GreenChunk.slimemapMessagesIsSlimechunk : ChatColor.RED + GreenChunk.slimemapMessagesNotSlimechunk);
                 itemMeta.setLore(lore);
 
                 itemStack.setItemMeta(itemMeta);

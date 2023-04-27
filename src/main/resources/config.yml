@@ -1,3 +1,6 @@
+# If you can translate or create new languages please create a Pull Request
+# https://github.com/Hynse/GreenChunk
+
 
 # If you want to change lang just uncomment that section
 
@@ -21,11 +24,13 @@ gui:
     title: 'Slime Maps'
     no-permission: '&cYou do not have permission to use this command!'
     not-player: '&cYou must be a player to use this command!'
+    not-slimechunk: 'Not Slime Chunk'
+    is-slimechunk: 'Is Slime Chunk'
 ### ---------------------------------------------------------------
 
 
 ### Chinese Simplified --------------------------------------------
-#slime-command:
+##slime-command:
 #  messages:
 #    not-in-chunk: '&c你不在X:&e%d&c, Z:&e%d&c的史莱姆区块内！'
 #    in-chunk: '&a你在X:&e%d&a, Z:&e%d&a的史莱姆区块内！'
@@ -36,6 +41,13 @@ gui:
 #    reload-config: '&eGreenChunk配置已重新加载'
 #    no-permission: '&c你没有权限使用这个指令！'
 #    error-reload-config: '&c重新加载GreenChunk配置出现了问题，请查看控制台获取更多信息'
+#gui:
+#  messages:
+#    title: 'Slime Maps'
+#    no-permission: '&cYou do not have permission to use this command!'
+#    not-player: '&cYou must be a player to use this command!'
+#    not-slimechunk: 'Not Slime Chunk'
+#    is-slimechunk: 'Is Slime Chunk'
 ### ---------------------------------------------------------------
 
 
@@ -51,4 +63,11 @@ gui:
 #    reload-config: "&eGreenChunk รีโหลดคอนฟิกแล้ว"
 #    no-permission: "&cคุณไม่มีสิทธิ์ในการใช้คำสั่งนี้!"
 #    error-reload-config: "&cเกิดข้อผิดพลาดขณะโหลดคอนฟิก GreenChunk โปรดดูที่คอนโซลสำหรับข้อมูลเพิ่มเติม"
+#gui:
+#  messages:
+#    title: 'Slime Maps'
+#    no-permission: '&cYou do not have permission to use this command!'
+#    not-player: '&cYou must be a player to use this command!'
+#    not-slimechunk: 'Not Slime Chunk'
+#    is-slimechunk: 'Is Slime Chunk'
 ### ---------------------------------------------------------------
