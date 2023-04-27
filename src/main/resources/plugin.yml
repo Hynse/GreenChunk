@@ -1,0 +1,4 @@
+name: GreenChunk
+version: '${version}'
+main: xyz.hynse.greenchunk.GreenChunk
+api-version: 1.19
