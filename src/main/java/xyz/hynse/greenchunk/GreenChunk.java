@@ -8,7 +8,7 @@ public final class GreenChunk extends JavaPlugin {
     @Override
     public void onEnable() {
         // Register command listener
-        getCommand("slime").setExecutor(new SlimeCommand());
+        getCommand("slime").setExecutor(new SlimeCommand(this));
     }
 
 }

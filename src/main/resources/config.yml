@@ -1,0 +1,7 @@
+slime-command:
+  messages:
+    not-in-chunk: '<red>You are not in a slime chunk!'
+    in-chunk: '<green>You are in a slime chunk!'
+    no-permission: '<red>You don&apos;t have permission to use this command!'
+    not-player: '<red>You must be a player to use this command!'
+  rgb-support: true
