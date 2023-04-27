@@ -1,18 +1,48 @@
-# Plugin messages
-messages:
-  prefix: '&a[GreenChunk] &f'
 
+# If you want to change lang just uncomment that section
+
+### English ------------------------------------------------------
 # Configuration for the SlimeCommand
 slime-command:
   messages:
-    not-in-chunk: '&cYou are not in a slime chunk at X:&e%x&c, Z:&e%z&c!'
-    in-chunk: '&aYou are in a slime chunk at X:&e%x&a, Z:&e%z&a!'
+    not-in-chunk: '&cYou are not in a slime chunk (&e%x&7,&e%d)&c!'
+    in-chunk: '&aYou are in a slime chunk (&e%x&7,&e%d)&a!'
     no-permission: '&cYou do not have permission to use this command!'
     not-player: '&cYou must be a player to use this command!'
-
 # Configuration for the ReloadCommand
 reload-command:
   messages:
     reload-config: '&eGreenChunk config reloaded.'
     no-permission: '&cYou do not have permission to use this command!'
     error-reload-config: '&cSomething went wrong reloading GreenChunk config, see the console for more.'
+### ---------------------------------------------------------------
+
+
+### Chinese Simplified --------------------------------------------
+#slime-command:
+#  messages:
+#    not-in-chunk: '&c你不在X:&e%x&c, Z:&e%d&c的史莱姆区块内！'
+#    in-chunk: '&a你在X:&e%x&a, Z:&e%d&a的史莱姆区块内！'
+#    no-permission: '&c&c你没有权限使用这个指令！'
+#    not-player: '&c你必须是玩家才能使用该命令！'
+#reload-command:
+#  messages:
+#    reload-config: '&eGreenChunk配置已重新加载'
+#    no-permission: '&c你没有权限使用这个指令！'
+#    error-reload-config: '&c重新加载GreenChunk配置出现了问题，请查看控制台获取更多信息'
+### ---------------------------------------------------------------
+
+
+### Thailand --------------------------------------------
+#slime-command:
+#  messages:
+#    not-in-chunk: "&cคุณไม่ได้อยู่ในสลามชักค์ (&e%x&7,&e%z)&c!"
+#    in-chunk: "&aคุณอยู่ในสลามชักค์ (&e%x&7,&e%z)&a!"
+#    no-permission: "&cคุณไม่มีสิทธิ์ในการใช้คำสั่งนี้!"
+#    not-player: "&cคุณต้องเป็นผู้เล่นเท่านั้นที่จะใช้คำสั่งนี้!"
+#reload-command:
+#  messages:
+#    reload-config: "&eGreenChunk รีโหลดคอนฟิกแล้ว"
+#    no-permission: "&cคุณไม่มีสิทธิ์ในการใช้คำสั่งนี้!"
+#    error-reload-config: "&cเกิดข้อผิดพลาดขณะโหลดคอนฟิก GreenChunk โปรดดูที่คอนโซลสำหรับข้อมูลเพิ่มเติม"
+### ---------------------------------------------------------------
