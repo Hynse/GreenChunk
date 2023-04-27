@@ -12,18 +12,22 @@ import xyz.hynse.greenchunk.util.SlimeChunkUtil;
 
 public class SlimeCommand implements CommandExecutor {
     private final GreenChunk plugin;
-    private final Component notInChunkMessage;
-    private final Component inChunkMessage;
-    private final Component noPermissionMessage;
-    private final Component notPlayerMessage;
+    private Component notInChunkMessage;
+    private Component inChunkMessage;
+    private Component noPermissionMessage;
+    private Component notPlayerMessage;
 
     public SlimeCommand(GreenChunk plugin) {
         this.plugin = plugin;
+    }
+
+    public void reloadMessages(Component noPermissionMessage, Component notPlayerMessage) {
+        this.noPermissionMessage = noPermissionMessage;
+        this.notPlayerMessage = notPlayerMessage;
         notInChunkMessage = Component.text(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("slime-command.messages.not-in-chunk")));
         inChunkMessage = Component.text(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("slime-command.messages.in-chunk")));
-        noPermissionMessage = Component.text(plugin.getConfig().getString("slime-command.messages.no-permission"));
-        notPlayerMessage = Component.text(plugin.getConfig().getString("slime-command.messages.not-player"));
     }
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

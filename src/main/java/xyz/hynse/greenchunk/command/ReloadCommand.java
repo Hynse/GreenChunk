@@ -11,12 +11,14 @@ public class ReloadCommand implements CommandExecutor {
     private final Component noPermissionMessage;
     private final Component reloadedConfigMessage;
     private final Component errorReloadConfigMessage;
+    private final SlimeCommand slimeCommand;
 
-    public ReloadCommand(GreenChunk plugin) {
+    public ReloadCommand(GreenChunk plugin, SlimeCommand slimeCommand) {
         this.plugin = plugin;
-        this.noPermissionMessage = Component.text(plugin.getConfig().getString("reload-command.messages.no-permission"));
-        this.reloadedConfigMessage = Component.text(plugin.getConfig().getString("reload-command.messages.reload-config"));
-        this.errorReloadConfigMessage = Component.text(plugin.getConfig().getString("reload-command.messages.error-reload-config"));
+        noPermissionMessage = Component.text(plugin.getConfig().getString("reload-command.messages.no-permission"));
+        reloadedConfigMessage = Component.text(plugin.getConfig().getString("reload-command.messages.reload-config"));
+        errorReloadConfigMessage = Component.text(plugin.getConfig().getString("reload-command.messages.error-reload-config"));
+        this.slimeCommand = slimeCommand;
     }
 
     @Override
@@ -29,11 +31,24 @@ public class ReloadCommand implements CommandExecutor {
         try {
             plugin.reloadConfig();
             sender.sendMessage(reloadedConfigMessage);
+            slimeCommand.reloadMessages(
+                    Component.text(plugin.getConfig().getString("slime-command.messages.no-permission")),
+                    Component.text(plugin.getConfig().getString("slime-command.messages.not-player"))
+            );
+
         } catch (Exception e) {
             sender.sendMessage(errorReloadConfigMessage);
             e.printStackTrace();
         }
 
         return true;
+    }
+
+    public Component getNoPermissionMessage() {
+        return noPermissionMessage;
+    }
+
+    public Component getNotPlayerMessage() {
+        return Component.text(plugin.getConfig().getString("slime-command.messages.not-player"));
     }
 }
