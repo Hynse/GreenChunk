@@ -1,6 +1,7 @@
 package xyz.hynse.greenchunk.command;
 
-import net.md_5.bungee.api.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,11 +12,10 @@ import xyz.hynse.greenchunk.util.SlimeChunkUtil;
 public class SlimeCommand implements CommandExecutor {
 
     private final GreenChunk plugin;
-    private boolean rgbSupport;
-    private String notInChunkMessage;
-    private String inChunkMessage;
-    private String noPermissionMessage;
-    private String notPlayerMessage;
+    private Component notInChunkMessage;
+    private Component inChunkMessage;
+    private Component noPermissionMessage;
+    private Component notPlayerMessage;
 
     public SlimeCommand(GreenChunk plugin) {
         this.plugin = plugin;
@@ -25,11 +25,10 @@ public class SlimeCommand implements CommandExecutor {
     private void loadConfig() {
         plugin.saveDefaultConfig();
         plugin.reloadConfig();
-        rgbSupport = plugin.getConfig().getBoolean("slime-command.rgb-support");
-        notInChunkMessage = plugin.getConfig().getString("slime-command.messages.not-in-chunk");
-        inChunkMessage = plugin.getConfig().getString("slime-command.messages.in-chunk");
-        noPermissionMessage = plugin.getConfig().getString("slime-command.messages.no-permission");
-        notPlayerMessage = plugin.getConfig().getString("slime-command.messages.not-player");
+        notInChunkMessage = Component.text(plugin.getConfig().getString("slime-command.messages.not-in-chunk")).color(NamedTextColor.RED);
+        inChunkMessage = Component.text(plugin.getConfig().getString("slime-command.messages.in-chunk")).color(NamedTextColor.GREEN);
+        noPermissionMessage = Component.text(plugin.getConfig().getString("slime-command.messages.no-permission")).color(NamedTextColor.RED);
+        notPlayerMessage = Component.text(plugin.getConfig().getString("slime-command.messages.not-player")).color(NamedTextColor.RED);
     }
 
     @Override
@@ -47,9 +46,9 @@ public class SlimeCommand implements CommandExecutor {
         }
 
         if (SlimeChunkUtil.canSlimeSpawnAt(player.getLocation().getBlockX(), player.getLocation().getBlockZ(), player.getWorld().getSeed())) {
-            player.sendMessage(rgbSupport ? ChatColor.of("#00ff00") + inChunkMessage : inChunkMessage);
+            player.sendMessage(inChunkMessage);
         } else {
-            player.sendMessage(rgbSupport ? ChatColor.of("#ff0000") + notInChunkMessage : notInChunkMessage);
+            player.sendMessage(notInChunkMessage);
         }
 
         return true;

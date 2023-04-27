@@ -1,10 +1,14 @@
 name: GreenChunk
-version: '${version}'
+version: '1.0'
 main: xyz.hynse.greenchunk.GreenChunk
 api-version: 1.19
 folia-supported: true
 commands:
   slime:
-    description: Check Slime at Current Position
+    description: Check slime at current position
     usage: /slime
     permission: slime.check
+  greenchunkreload:
+    description: Reload the GreenChunk config
+    usage: /greenchunkreload
+    permission: greenchunk.reload

@@ -8,10 +8,14 @@ public class GreenChunk extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        register();
         saveDefaultConfig();
         reloadConfig();
+
+
+    }
+    private void register() {
         getCommand("slime").setExecutor(new SlimeCommand(this));
         getCommand("greenchunkreload").setExecutor(new ReloadCommand(this));
     }
-
 }

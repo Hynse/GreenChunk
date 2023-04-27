@@ -1,7 +1,12 @@
 slime-command:
   messages:
-    not-in-chunk: '<red>You are not in a slime chunk!'
-    in-chunk: '<green>You are in a slime chunk!'
-    no-permission: '<red>You don&apos;t have permission to use this command!'
-    not-player: '<red>You must be a player to use this command!'
+    not-in-chunk: '<red>You are not in a slime chunk!</red>'
+    in-chunk: '<green>You are in a slime chunk!</green>'
+    no-permission: '<red>You do not have permission to use this command!</red>'
+    not-player: '<red>You must be a player to use this command!</red>'
   rgb-support: true
+
+reload-command:
+  messages:
+    success: '<yellow>GreenChunk config reloaded.</yellow>'
+    no-permission: '<red>You do not have permission to use this command!</red>'
