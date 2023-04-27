@@ -116,7 +116,7 @@ slimeMapItem: SLIME_BALL
 #enableSlimeMapItem: true
 #slimeMapItem: SLIME_BALL
 ### ---------------------------------------------------------------```
-
+```
 ## Contributing
 
 If you would like to contribute to FoliaFlow, feel free to submit a pull request with your changes. All contributions are welcome and appreciated.
