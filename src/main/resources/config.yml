@@ -5,8 +5,8 @@
 # Configuration for the SlimeCommand
 slime-command:
   messages:
-    not-in-chunk: '&cYou are not in a slime chunk (&e%x&7,&e%z)&c!'
-    in-chunk: '&aYou are in a slime chunk (&e%x&7,&e%z)&a!'
+    not-in-chunk: '&cYou are not in a slime chunk (&e%x&7,&e%d)&c!'
+    in-chunk: '&aYou are in a slime chunk (&e%x&7,&e%d)&a!'
     no-permission: '&cYou do not have permission to use this command!'
     not-player: '&cYou must be a player to use this command!'
 # Configuration for the ReloadCommand

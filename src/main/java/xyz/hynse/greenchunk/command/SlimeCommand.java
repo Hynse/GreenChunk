@@ -24,8 +24,6 @@ public class SlimeCommand implements CommandExecutor {
             return true;
         }
 
-        int playerX = Double.valueOf(player.getLocation().getX()).intValue();
-        int playerZ = Double.valueOf(player.getLocation().getZ()).intValue();
         int x = player.getLocation().getBlockX();
         int z = player.getLocation().getBlockZ();
         long seed = player.getWorld().getSeed();
@@ -41,7 +39,7 @@ public class SlimeCommand implements CommandExecutor {
             messageColor = ChatColor.RED.toString();
         }
 
-        String message = String.format(messageColor + messageFormat, playerX, playerZ);
+        String message = String.format(messageColor + messageFormat, x, z);
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 
         return true;
