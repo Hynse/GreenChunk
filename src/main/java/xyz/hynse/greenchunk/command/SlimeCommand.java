@@ -1,7 +1,6 @@
 package xyz.hynse.greenchunk.command;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Chunk;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,9 +22,7 @@ public class SlimeCommand implements CommandExecutor {
             player.sendMessage(GreenChunk.slimeCommandMessagesNoPermission);
             return true;
         }
-        Chunk chunk = player.getLocation().getChunk();
-        int chunkX = chunk.getX();
-        int chunkZ = chunk.getZ();
+
         int x = player.getLocation().getBlockX();
         int z = player.getLocation().getBlockZ();
         long seed = player.getWorld().getSeed();
@@ -41,9 +38,13 @@ public class SlimeCommand implements CommandExecutor {
             messageColor = ChatColor.RED.toString();
         }
 
-        String message = String.format(messageColor + messageFormat, chunkX, chunkZ);
+        String xStr = Integer.toHexString(x).toUpperCase();
+        String zStr = Integer.toHexString(z).toUpperCase();
+
+        String message = String.format(messageColor + messageFormat, xStr, zStr);
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 
         return true;
     }
 }
+
