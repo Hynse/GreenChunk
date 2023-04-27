@@ -1,3 +1,5 @@
+messages:
+  prefix: '&a[GreenChunk] &f'
 slime-command:
   messages:
     not-in-chunk: '&cYou are not in a slime chunk at X:&e%x&c, Z:&e%z&c!'

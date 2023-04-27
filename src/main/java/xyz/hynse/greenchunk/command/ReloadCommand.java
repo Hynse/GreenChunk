@@ -1,6 +1,7 @@
 package xyz.hynse.greenchunk.command;
 
 import net.kyori.adventure.text.Component;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,9 +22,12 @@ public class ReloadCommand implements CommandExecutor {
         plugin.reloadConfig();
         String prefix = plugin.getConfig().getString("messages.prefix");
         noPermissionMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.no-permission"));
-        reloadedConfgMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.reload-config"));
-        errorreloadConfgMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.error-reload-config"));
+        reloadedConfgMessage = Component.text(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("reload-command.messages.reload-config")));
+        errorreloadConfgMessage = Component.text(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("reload-command.messages.error-reload-config")));
+
     }
+
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
