@@ -13,10 +13,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 import space.arim.morepaperlib.MorePaperLib;
 import xyz.hynse.greenchunk.GreenChunk;
 import xyz.hynse.greenchunk.util.SlimeChunkUtil;
+import xyz.hynse.greenchunk.util.getSlotFromCoordinateUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 
 public class SlimeMapCommand implements CommandExecutor {
     private final MorePaperLib morePaperLib;
@@ -62,30 +62,16 @@ public class SlimeMapCommand implements CommandExecutor {
                 itemMeta.setLore(lore);
 
                 itemStack.setItemMeta(itemMeta);
-                int slot = getSlotFromCoordinates(playerYaw, x - centerX, z - centerZ);
-
+                int slot = getSlotFromCoordinateUtil.getSlotFromCoordinates(playerYaw, x - centerX, z - centerZ);
                 morePaperLib.scheduling().asyncScheduler().run(() -> {
-                    try {
-                        inventory.setItem(slot, itemStack);
-                    } catch (Exception e) {
-                        JavaPlugin plugin = JavaPlugin.getPlugin(GreenChunk.class);
-                        plugin.getLogger().log(Level.SEVERE, "Error while setting item in inventory.", e);
-                    }
-                });
 
+                        inventory.setItem(slot, itemStack);
+
+                });
             }
         }
 
         player.openInventory(inventory);
         return true;
-    }
-
-    private int getSlotFromCoordinates(float yaw, int dx, int dz) {
-        int dir = Math.round(yaw / 90) % 4;
-        int[] xTable = {1, 0, -1, 0};
-        int[] zTable = {0, 1, 0, -1};
-        int newX = dx * xTable[dir] + dz * zTable[dir];
-        int newZ = -dx * zTable[dir] + dz * xTable[dir];
-        return (newX + 5) * 9 + (newZ + 5);
     }
 }
