@@ -1,7 +1,6 @@
 package xyz.hynse.greenchunk.command;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,6 +9,8 @@ import xyz.hynse.greenchunk.GreenChunk;
 public class ReloadCommand implements CommandExecutor {
     private final GreenChunk plugin;
     private Component noPermissionMessage;
+    private Component reloadedConfgMessage;
+    private Component errorreloadConfgMessage;
 
     public ReloadCommand(GreenChunk plugin) {
         this.plugin = plugin;
@@ -18,8 +19,12 @@ public class ReloadCommand implements CommandExecutor {
     private void loadConfig() {
         plugin.saveDefaultConfig();
         plugin.reloadConfig();
-        noPermissionMessage = Component.text(plugin.getConfig().getString("slime-command.messages.no-permission")).color(NamedTextColor.RED);
+        String prefix = plugin.getConfig().getString("messages.prefix");
+        noPermissionMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.no-permission"));
+        reloadedConfgMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.reload-config"));
+        errorreloadConfgMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.error-reload-config"));
     }
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!sender.hasPermission("greenchunk.reload")) {
@@ -30,9 +35,9 @@ public class ReloadCommand implements CommandExecutor {
         try {
             plugin.reloadConfig();
             plugin.saveDefaultConfig();
-            sender.sendMessage(Component.text("GreenChunk config reloaded.").color(NamedTextColor.YELLOW));
+            sender.sendMessage(reloadedConfgMessage);
         } catch (Exception e) {
-            sender.sendMessage(Component.text("Something went wrong reloading GreenChunk config, see the console for more.").color(NamedTextColor.RED));
+            sender.sendMessage(errorreloadConfgMessage);
             e.printStackTrace();
         }
 

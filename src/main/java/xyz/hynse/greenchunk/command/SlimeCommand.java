@@ -1,7 +1,6 @@
 package xyz.hynse.greenchunk.command;
 
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,10 +24,11 @@ public class SlimeCommand implements CommandExecutor {
     private void loadConfig() {
         plugin.saveDefaultConfig();
         plugin.reloadConfig();
-        notInChunkMessage = Component.text(plugin.getConfig().getString("slime-command.messages.not-in-chunk")).color(NamedTextColor.RED);
-        inChunkMessage = Component.text(plugin.getConfig().getString("slime-command.messages.in-chunk")).color(NamedTextColor.GREEN);
-        noPermissionMessage = Component.text(plugin.getConfig().getString("slime-command.messages.no-permission")).color(NamedTextColor.RED);
-        notPlayerMessage = Component.text(plugin.getConfig().getString("slime-command.messages.not-player")).color(NamedTextColor.RED);
+        String prefix = plugin.getConfig().getString("messages.prefix");
+        notInChunkMessage = Component.text(prefix + plugin.getConfig().getString("slime-command.messages.not-in-chunk"));
+        inChunkMessage = Component.text(prefix + plugin.getConfig().getString("slime-command.messages.in-chunk"));
+        noPermissionMessage = Component.text(prefix + plugin.getConfig().getString("slime-command.messages.no-permission"));
+        notPlayerMessage = Component.text(prefix + plugin.getConfig().getString("slime-command.messages.not-player"));
     }
 
     @Override
