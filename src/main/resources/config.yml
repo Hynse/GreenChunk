@@ -1,18 +1,15 @@
 # Plugin messages
-messages:
-  prefix: '&a[GreenChunk] &f'
-
 # Configuration for the SlimeCommand
 slime-command:
   messages:
-    not-in-chunk: '&cYou are not in a slime chunk at X:&e%x&c, Z:&e%z&c!'
-    in-chunk: '&aYou are in a slime chunk at X:&e%x&a, Z:&e%z&a!'
+    not-in-chunk: '&cYou are not in a slime chunk at X:&e%x&c, Z:&e%d&c!'
+    in-chunk: '&aYou are in a slime chunk at X:&e%x&a, Z:&e%d&a!'
     no-permission: '&cYou do not have permission to use this command!'
     not-player: '&cYou must be a player to use this command!'
 
 # Configuration for the ReloadCommand
 reload-command:
   messages:
-    reload-config: '&eGreenChunk config reloaded.'
+    reload-config: '&aGreenChunk config reloaded.'
     no-permission: '&cYou do not have permission to use this command!'
     error-reload-config: '&cSomething went wrong reloading GreenChunk config, see the console for more.'
