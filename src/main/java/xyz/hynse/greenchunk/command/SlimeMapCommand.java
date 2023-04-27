@@ -38,7 +38,7 @@ public class SlimeMapCommand implements CommandExecutor {
             return true;
         }
 
-        Inventory inventory = GreenChunk.instance.getServer().createInventory(player, 27, "Slime Map");
+        Inventory inventory = GreenChunk.instance.getServer().createInventory(null, 57, "Slime Map");
 
         int centerX = player.getLocation().getBlockX() >> 4;
         int centerZ = player.getLocation().getBlockZ() >> 4;
@@ -58,10 +58,9 @@ public class SlimeMapCommand implements CommandExecutor {
                 itemStack.setItemMeta(itemMeta);
                 int slot = (x - centerX + 5) * 9 + (z - centerZ + 5);
 
-                // Schedule a task to set the item in the inventory
-                GreenChunk.instance.getServer().getScheduler().runTaskLater(GreenChunk.instance, () -> {
+                morePaperLib.scheduling().asyncScheduler().run(() -> {
                     inventory.setItem(slot, itemStack);
-                }, 1);
+                });
             }
         }
 
