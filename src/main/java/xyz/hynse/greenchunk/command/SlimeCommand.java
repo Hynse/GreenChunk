@@ -30,14 +30,14 @@ public class SlimeCommand implements CommandExecutor {
 
         String notInChunk = plugin.getConfig().getString("slime-command.messages.not-in-chunk");
         notInChunkMessage = Component.text(ChatColor.translateAlternateColorCodes('&', notInChunk))
-                .replaceText(TextReplacementConfig.builder().match("%x").replacement(Component.text("0")).build())
-                .replaceText(TextReplacementConfig.builder().match("%z").replacement(Component.text("0")).build())
+                .replaceText(TextReplacementConfig.builder().match("%x").replacement(Component.text(String.valueOf(x))).build())
+                .replaceText(TextReplacementConfig.builder().match("%z").replacement(Component.text(String.valueOf(z))).build())
                 .asComponent();
 
         String inChunk = plugin.getConfig().getString("slime-command.messages.in-chunk");
         inChunkMessage = Component.text(ChatColor.translateAlternateColorCodes('&', inChunk))
-                .replaceText(TextReplacementConfig.builder().match("%x").replacement(Component.text("0")).build())
-                .replaceText(TextReplacementConfig.builder().match("%z").replacement(Component.text("0")).build())
+                .replaceText(TextReplacementConfig.builder().match("%x").replacement(Component.text(String.valueOf(x))).build())
+                .replaceText(TextReplacementConfig.builder().match("%z").replacement(Component.text(String.valueOf(z))).build())
                 .asComponent();
 
         noPermissionMessage = Component.text(prefix + plugin.getConfig().getString("slime-command.messages.no-permission"));
