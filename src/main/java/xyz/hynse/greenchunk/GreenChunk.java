@@ -17,6 +17,7 @@ public class GreenChunk extends JavaPlugin {
     public static String reloadCommandMessagesReloadConfig;
     public static String reloadCommandMessagesErrorReloadConfig;
     public static String reloadCommandMessagesNoPermission;
+    public static String slimemapMessagesTitle;
     private MorePaperLib morePaperLib;
 
     @Override
@@ -38,6 +39,7 @@ public class GreenChunk extends JavaPlugin {
         reloadCommandMessagesReloadConfig = getConfig().getString("reload-command.messages.reload-config");
         reloadCommandMessagesErrorReloadConfig = getConfig().getString("reload-command.messages.error-reload-config");
         reloadCommandMessagesNoPermission = getConfig().getString("reload-command.messages.no-permission");
+        slimemapMessagesTitle = getConfig().getString("gui.messages.title");
     }
     private void register() {
         getCommand("greenchunkreload").setExecutor(new ReloadCommand());

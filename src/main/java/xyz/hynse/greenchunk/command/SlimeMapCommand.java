@@ -39,7 +39,7 @@ public class SlimeMapCommand implements CommandExecutor {
             return true;
         }
 
-        Inventory inventory = GreenChunk.instance.getServer().createInventory(null, 54, "Slime Map");
+        Inventory inventory = GreenChunk.instance.getServer().createInventory(null, 54, GreenChunk.slimemapMessagesTitle);
 
         int centerX = player.getLocation().getBlockX() >> 4;
         int centerZ = player.getLocation().getBlockZ() >> 4;
