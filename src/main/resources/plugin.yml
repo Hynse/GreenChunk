@@ -21,3 +21,16 @@ commands:
     default: false
     aliases:
       - slimereload
+permissions:
+  slime:
+    description: Check slime at current position
+    default: true
+  greenchunk.map:
+    description: Allows players to use the slime map command.
+    default: true
+  greenchunk.map.item:
+    description: Allows players to use the slime map item.
+    default: true
+  greenchunk.reload:
+    description: Reload the GreenChunk config
+    default: false

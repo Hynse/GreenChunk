@@ -1,4 +1,4 @@
-package xyz.hynse.greenchunk.util;
+package xyz.hynse.greenchunk.listener;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

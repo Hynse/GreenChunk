@@ -26,6 +26,10 @@ gui:
     not-player: '&cYou must be a player to use this command!'
     not-slimechunk: 'Not Slime Chunk'
     is-slimechunk: 'Is Slime Chunk'
+    item: 'You do not have permission to use item!'
+# Slimemap Settings
+enableSlimeMapItem: true
+slimeMapItem: SLIME_BALL
 ### ---------------------------------------------------------------
 
 
@@ -48,6 +52,9 @@ gui:
 #    not-player: '&cYou must be a player to use this command!'
 #    not-slimechunk: 'Not Slime Chunk'
 #    is-slimechunk: 'Is Slime Chunk'
+#    item: '&cYou do not have permission to use item!'
+#enableSlimeMapItem: true
+#slimeMapItem: SLIME_BALL
 ### ---------------------------------------------------------------
 
 
@@ -70,4 +77,7 @@ gui:
 #    not-player: '&cYou must be a player to use this command!'
 #    not-slimechunk: 'Not Slime Chunk'
 #    is-slimechunk: 'Is Slime Chunk'
+#    item: 'You do not have permission to use item!'
+#enableSlimeMapItem: true
+#slimeMapItem: SLIME_BALL
 ### ---------------------------------------------------------------
