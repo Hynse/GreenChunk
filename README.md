@@ -116,3 +116,11 @@ slimeMapItem: SLIME_BALL
 #enableSlimeMapItem: true
 #slimeMapItem: SLIME_BALL
 ### ---------------------------------------------------------------```
+
+## Contributing
+
+If you would like to contribute to FoliaFlow, feel free to submit a pull request with your changes. All contributions are welcome and appreciated.
+
+## License
+
+This plugin is licensed under the MIT license. See [LICENSE.md](https://github.com/Hynse/GreenChunk/blob/master/LICENSE.md) for more information.
