@@ -1,7 +1,6 @@
 package xyz.hynse.greenchunk.command;
 
 import net.kyori.adventure.text.Component;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,25 +8,16 @@ import xyz.hynse.greenchunk.GreenChunk;
 
 public class ReloadCommand implements CommandExecutor {
     private final GreenChunk plugin;
-    private Component noPermissionMessage;
-    private Component reloadedConfgMessage;
-    private Component errorreloadConfgMessage;
+    private final Component noPermissionMessage;
+    private final Component reloadedConfigMessage;
+    private final Component errorReloadConfigMessage;
 
     public ReloadCommand(GreenChunk plugin) {
         this.plugin = plugin;
-        loadConfig();
+        this.noPermissionMessage = Component.text(plugin.getConfig().getString("reload-command.messages.no-permission"));
+        this.reloadedConfigMessage = Component.text(plugin.getConfig().getString("reload-command.messages.reload-config"));
+        this.errorReloadConfigMessage = Component.text(plugin.getConfig().getString("reload-command.messages.error-reload-config"));
     }
-    private void loadConfig() {
-        plugin.saveDefaultConfig();
-        plugin.reloadConfig();
-        String prefix = plugin.getConfig().getString("messages.prefix");
-        noPermissionMessage = Component.text(prefix + plugin.getConfig().getString("reload-command.messages.no-permission"));
-        reloadedConfgMessage = Component.text(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("reload-command.messages.reload-config")));
-        errorreloadConfgMessage = Component.text(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("reload-command.messages.error-reload-config")));
-
-    }
-
-
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -38,10 +28,9 @@ public class ReloadCommand implements CommandExecutor {
 
         try {
             plugin.reloadConfig();
-            plugin.saveDefaultConfig();
-            sender.sendMessage(reloadedConfgMessage);
+            sender.sendMessage(reloadedConfigMessage);
         } catch (Exception e) {
-            sender.sendMessage(errorreloadConfgMessage);
+            sender.sendMessage(errorReloadConfigMessage);
             e.printStackTrace();
         }
 

@@ -1,5 +1,5 @@
 name: GreenChunk
-version: '1.0'
+version: ${version}
 main: xyz.hynse.greenchunk.GreenChunk
 api-version: 1.19
 folia-supported: true
