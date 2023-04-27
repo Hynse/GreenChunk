@@ -63,11 +63,14 @@ public class SlimeMapCommand implements CommandExecutor {
 
                 itemStack.setItemMeta(itemMeta);
                 int slot = getSlotFromCoordinateUtil.getSlotFromCoordinates(playerYaw, x - centerX, z - centerZ);
-                morePaperLib.scheduling().asyncScheduler().run(() -> {
-                    inventory.setItem(slot, itemStack);
-                });
+                if (slot < inventory.getSize()) {
+                    morePaperLib.scheduling().asyncScheduler().run(() -> {
+                        inventory.setItem(slot, itemStack);
+                    });
+                }
             }
         }
+
 
         player.openInventory(inventory);
         return true;
