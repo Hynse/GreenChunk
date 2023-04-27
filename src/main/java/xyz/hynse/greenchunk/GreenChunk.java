@@ -53,6 +53,10 @@ public class GreenChunk extends JavaPlugin {
         slimemapMessagesNotSlimechunk = getConfig().getString("gui.messages.not-slimechunk");
         slimemapMessagesIsSlimechunk = getConfig().getString("gui.messages.is-slimechunk");
         slimemapMessagesItem = getConfig().getString("gui.messages.item");
+        enableSlimeMapItem = getConfig().getBoolean("enableSlimeMapItem");
+        String materialName = getConfig().getString("slimeMapItem");
+        slimeMapItemMaterial = Material.getMaterial(materialName);
+
     }
     private void register() {
         Configuration config = GreenChunk.instance.getConfig();
