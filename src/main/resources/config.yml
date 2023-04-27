@@ -1,29 +1,11 @@
-# Configuration file for GreenChunk plugin
-
-# Configuration options for the slime command
 slime-command:
-  # Messages to display to the player
   messages:
-    # Message displayed when the player is not in a slime chunk
-    not-in-chunk: '<red>You are not in a slime chunk!</red>'
-    # Message displayed when the player is in a slime chunk
-    in-chunk: '<green>You are in a slime chunk!</green>'
-    # Message displayed when the player does not have permission to use the command
-    no-permission: '<red>You do not have permission to use this command!</red>'
-    # Message displayed when the command is executed by a non-player entity
-    not-player: '<red>You must be a player to use this command!</red>'
-  # Whether to use RGB color codes in the messages
-  rgb-support: false
-
-# Configuration options for the reload command
+    not-in-chunk: '&cYou are not in a slime chunk at X:&e%x&c, Z:&e%z&c!'
+    in-chunk: '&aYou are in a slime chunk at X:&e%x&c, Z:&e%z&a!'
+    no-permission: '&cYou do not have permission to use this command!'
+    not-player: '&cYou must be a player to use this command!'
 reload-command:
-  # Messages to display to the player
   messages:
-    # Message displayed when the configuration file is reloaded
-    reload-config: '<yellow>GreenChunk config reloaded.</yellow>'
-    # Message displayed when the player does not have permission to use the command
-    no-permission: '<red>You do not have permission to use this command!</red>'
-    # Message displayed when an error occurs while reloading the configuration file
-    error-reload-config: '<red>Something went wrong reloading GreenChunk config, see the console for more.</red>'
-  # Whether to use RGB color codes in the messages
-  rgb-support: false
+    reload-config: '&eGreenChunk config reloaded.'
+    no-permission: '&cYou do not have permission to use this command!'
+    error-reload-config: '&cSomething went wrong reloading GreenChunk config, see the console for more.'
