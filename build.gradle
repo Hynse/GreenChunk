@@ -12,13 +12,14 @@ repositories {
         url = "https://repo.papermc.io/repository/maven-public/"
     }
     maven {
-        name = "sonatype"
-        url = "https://oss.sonatype.org/content/groups/public/"
+        name = "arim-mvn-lgpl3"
+        url = "https://mvn-repo.arim.space/lesser-gpl3/"
     }
 }
 
 dependencies {
-    compileOnly "io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT"
+    compileOnly "dev.folia:folia-api:1.19.4-R0.1-SNAPSHOT"
+    implementation 'space.arim.morepaperlib:morepaperlib:0.4.2'
 }
 
 def targetJavaVersion = 17
