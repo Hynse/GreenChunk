@@ -5,6 +5,7 @@ import space.arim.morepaperlib.MorePaperLib;
 import xyz.hynse.greenchunk.command.ReloadCommand;
 import xyz.hynse.greenchunk.command.SlimeCommand;
 import xyz.hynse.greenchunk.command.SlimeMapCommand;
+import xyz.hynse.greenchunk.util.PreventPickupItemSlimeMap;
 
 public class GreenChunk extends JavaPlugin {
 
@@ -22,6 +23,7 @@ public class GreenChunk extends JavaPlugin {
     public void onEnable() {
         instance = this;
         this.morePaperLib = new MorePaperLib(this);
+        getServer().getPluginManager().registerEvents(new PreventPickupItemSlimeMap(), this);
         saveDefaultConfig();
         register();
         reload();

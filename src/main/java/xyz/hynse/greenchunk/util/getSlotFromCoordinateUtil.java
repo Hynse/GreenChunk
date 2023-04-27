@@ -9,7 +9,7 @@ public class getSlotFromCoordinateUtil {
             int newX = dx * xTable[dir] + dz * zTable[dir];
             int newZ = -dx * zTable[dir] + dz * xTable[dir];
             return (newZ + 3) * 9 + (newX + 4);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
             return 0;
         }
     }
