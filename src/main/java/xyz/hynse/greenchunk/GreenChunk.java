@@ -3,6 +3,7 @@ package xyz.hynse.greenchunk;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.hynse.greenchunk.command.ReloadCommand;
 import xyz.hynse.greenchunk.command.SlimeCommand;
+import xyz.hynse.greenchunk.command.SlimeMapCommand;
 
 public class GreenChunk extends JavaPlugin {
 
@@ -36,5 +37,6 @@ public class GreenChunk extends JavaPlugin {
     private void register() {
         getCommand("greenchunkreload").setExecutor(new ReloadCommand());
         getCommand("slime").setExecutor(new SlimeCommand());
+        getCommand("slimemap").setExecutor(new SlimeMapCommand());
     }
 }

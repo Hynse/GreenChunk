@@ -9,6 +9,11 @@ commands:
     usage: /slime
     permission: greenchunk.check
     default: true
+  slimemap:
+    description: Open slimechunk map around current position
+    usage: /slimemap
+    permission: greenchunk.map
+    default: true
   greenchunkreload:
     description: Reload the GreenChunk config
     usage: /greenchunkreload
