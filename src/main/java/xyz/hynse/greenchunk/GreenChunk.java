@@ -21,7 +21,7 @@ public final class GreenChunk extends JavaPlugin {
                 sender.sendMessage(ChatColor.RED + "You must be a player to use this command!");
                 return true;
             }
-            if (player.hasPermission("slime.check")) {
+            if (!player.hasPermission("slime.check")) {
                 player.sendMessage(ChatColor.RED + "You don't have permission to use this command!");
                 return true;
             }
