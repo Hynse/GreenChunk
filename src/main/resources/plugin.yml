@@ -7,9 +7,11 @@ commands:
   slime:
     description: Check slime at current position
     usage: /slime
-    permission: greenchunk.reload
+    permission: greenchunk.check
     default: true
   greenchunkreload:
     description: Reload the GreenChunk config
     usage: /greenchunkreload
     permission: greenchunk.reload
+    aliases:
+      - slimereload
