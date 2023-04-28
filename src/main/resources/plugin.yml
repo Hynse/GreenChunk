@@ -5,23 +5,27 @@ api-version: 1.19
 folia-supported: true
 commands:
   slime:
-    description: Check slime at current position
     usage: /slime
-    permission: greenchunk.check
-    default: true
   slimemap:
-    description: Open slimechunk map around current position
     usage: /slimemap
-    permission: greenchunk.map
-    default: true
   greenchunkreload:
-    description: Reload the GreenChunk config
     usage: /greenchunkreload
-    permission: greenchunk.reload
-    default: false
     aliases:
       - slimereload
 permissions:
   greenchunk.map.item:
     description: Allows players to use the slime map item.
     default: true
+  greenchunk.item:
+    description: Allows players to use check slime chunk with item.
+    default: true
+  greenchunk.reload:
+    description: Reload the GreenChunk config
+    default: false
+  greenchunk.map:
+    description: Open slimechunk map around current position
+    default: true
+  greenchunk.check:
+    description: Check slime at current position
+    default: true
+

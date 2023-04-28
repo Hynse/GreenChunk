@@ -10,14 +10,23 @@ import xyz.hynse.greenchunk.GreenChunk;
 public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("greenchunk.reload")) return true;
+        if (!sender.hasPermission("greenchunk.reload")) {
+            sendMessage(sender, GreenChunk.reloadCommandMessagesNoPermission);
+            return true;
+        }
+
         try {
             GreenChunk.instance.reload();
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', GreenChunk.reloadCommandMessagesReloadConfig));
+            sendMessage(sender, GreenChunk.reloadCommandMessagesReloadConfig);
         } catch (Exception e) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', GreenChunk.reloadCommandMessagesErrorReloadConfig));
+            sendMessage(sender, GreenChunk.reloadCommandMessagesErrorReloadConfig);
             e.printStackTrace();
         }
         return true;
+    }
+    private void sendMessage(CommandSender sender, String message) {
+        if (message != null) {
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+        }
     }
 }

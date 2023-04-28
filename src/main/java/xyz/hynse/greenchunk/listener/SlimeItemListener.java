@@ -8,11 +8,12 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import xyz.hynse.greenchunk.GreenChunk;
 import xyz.hynse.greenchunk.util.GuiBuilderUtil;
+import xyz.hynse.greenchunk.util.SlimeChunkCheckUtil;
 
 import static xyz.hynse.greenchunk.GreenChunk.enableSlimeMapItem;
 import static xyz.hynse.greenchunk.GreenChunk.slimeMapItemMaterial;
 
-public class SlimeMapItemListener implements Listener {
+public class SlimeItemListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         if (!enableSlimeMapItem) {
@@ -25,16 +26,13 @@ public class SlimeMapItemListener implements Listener {
         if (item == null || item.getType() != slimeMapItemMaterial) {
             return;
         }
-        if (!player.hasPermission("greenchunk.map.item")) {
+        if (!player.hasPermission("greenchunk.item")) {
             player.sendMessage(GreenChunk.slimemapMessagesItem);
             return;
         }
-        if (event.getAction() != Action.RIGHT_CLICK_AIR && event.getAction() != Action.RIGHT_CLICK_BLOCK) {
+        if (event.getAction() != Action.LEFT_CLICK_AIR && event.getAction() != Action.LEFT_CLICK_BLOCK) {
             return;
         }
-
-        GuiBuilderUtil guiBuilder = new GuiBuilderUtil(GreenChunk.instance.getMorePaperLib());
-        guiBuilder.buildSlimeMap(player);
-        event.setCancelled(true);
+        SlimeChunkCheckUtil.sendSlimeChunkMessage(player);
     }
 }
