@@ -47,12 +47,12 @@ slimeMapItem: SLIME_BALL
 #    error-reload-config: '&c重新加载GreenChunk配置出现了问题，请查看控制台获取更多信息'
 #gui:
 #  messages:
-#    title: 'Slime Maps'
-#    no-permission: '&cYou do not have permission to use this command!'
-#    not-player: '&cYou must be a player to use this command!'
-#    not-slimechunk: 'Not Slime Chunk'
-#    is-slimechunk: 'Is Slime Chunk'
-#    item: '&cYou do not have permission to use item!'
+#    title: '史莱姆区块可视化GUI'
+#    no-permission: '&c你没有权限使用该命令！'
+#    not-player: '&c此命令必须在玩家执行！'
+#    not-slimechunk: '不是史莱姆区块'
+#    is-slimechunk: '是史莱姆区块'
+#    item: '&c你没有权限去使用它！'
 #enableSlimeMapItem: true
 #slimeMapItem: SLIME_BALL
 ### ---------------------------------------------------------------
