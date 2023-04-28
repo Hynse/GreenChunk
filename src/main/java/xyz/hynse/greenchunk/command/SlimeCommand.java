@@ -17,7 +17,7 @@ public class SlimeCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!player.hasPermission("slime.check")) {
+        if (!player.hasPermission("greenchunk.check")) {
             player.sendMessage(GreenChunk.slimeCommandMessagesNoPermission);
             return true;
         }
