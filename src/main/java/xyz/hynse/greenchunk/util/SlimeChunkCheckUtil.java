@@ -1,8 +1,10 @@
 package xyz.hynse.greenchunk.util;
 
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import xyz.hynse.greenchunk.GreenChunk;
+
 public class SlimeChunkCheckUtil {
 
     public static void sendSlimeChunkMessage(Player player) {
@@ -10,12 +12,12 @@ public class SlimeChunkCheckUtil {
         int z = player.getLocation().getBlockZ();
         double playerX = player.getLocation().getX();
         double playerZ = player.getLocation().getZ();
-        long seed = player.getWorld().getSeed();
+        World world = player.getWorld();
 
         String messageFormat;
         String messageColor;
 
-        if (SlimeChunkUtil.canSlimeSpawnAt(x, z, seed)) {
+        if (SlimeChunkUtil.canSlimeSpawnAt(x, z, world)) {
             messageFormat = GreenChunk.slimeCommandMessagesInChunk;
             messageColor = ChatColor.GREEN.toString();
         } else {

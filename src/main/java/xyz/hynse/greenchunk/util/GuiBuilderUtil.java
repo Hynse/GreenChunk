@@ -30,7 +30,7 @@ public class GuiBuilderUtil {
 
         for (int x = centerX - 5; x <= centerX + 5; x++) {
             for (int z = centerZ - 5; z <= centerZ + 5; z++) {
-                boolean isSlimeChunk = SlimeChunkUtil.canSlimeSpawnInChunk(x, z, player.getWorld().getSeed());
+                boolean isSlimeChunk = SlimeChunkUtil.canSlimeSpawnInChunk(x, z, player.getWorld());
                 boolean isCurrentChunk = (x == centerX && z == centerZ);
 
                 Material paneColor = isSlimeChunk ? Material.LIME_STAINED_GLASS_PANE :
